@@ -12,6 +12,7 @@
   <!-- Leaflet Map CSS & JS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   <style>
     :root {
@@ -221,141 +222,73 @@
     }
 
     /* === Nav === */
-    .nav {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .nav-inner {
-      display: flex;
-      gap: 8px;
-      padding: 12px 24px;
-      max-width: 1000px;
-      margin: 0 auto;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-
-    .nav-tab {
-      padding: 10px 16px;
-      border-radius: 100px;
-      border: none;
-      background: transparent;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-muted);
-      cursor: pointer;
-      transition: all 0.2s;
-      white-space: nowrap;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    /* ========================= */
-    /* DARK MODE */
-    /* ========================= */
-    .dark-mode {
-      background: #121212;
-      color: #ffffff;
-    }
-
-    /* Navbar */
-    .dark-mode .nav {
-      background: #1e1e1e;
-      border-bottom: 1px solid #333;
-    }
-
-    /* Navigation Buttons */
-    .dark-mode .nav-tab {
-      color: #e5e5e5;
-    }
-
-    .dark-mode .nav-tab:hover {
-      background: #2a2a2a;
-      color: white;
-    }
-
-    .dark-mode .nav-tab.active {
-      background: #333;
-      color: #fff;
-    }
-
-    /* Panels */
-    .dark-mode section,
-    .dark-mode .panel,
-    .dark-mode .card {
-      background: #1e1e1e;
-      color: white;
-    }
-
-    /* Inputs */
-    .dark-mode input,
-    .dark-mode select,
-    .dark-mode textarea {
-      background: #2a2a2a;
-      color: white;
-      border: 1px solid #555;
-    }
-
-    /* Tables */
-    .dark-mode table {
-      background: #1e1e1e;
-      color: white;
-    }
-
-    .dark-mode th,
-    .dark-mode td {
-      border-color: #444;
-    }
-
-    /* Modals */
-    .dark-mode .modal,
-    .dark-mode .modal-content {
-      background: #1e1e1e;
-      color: white;
-    }
-
-    /* Smooth transition */
-    body,
-    .nav,
-    .nav-tab,
-    .card,
-    .panel,
-    button,
-    input,
-    table,
-    .modal {
-      transition: all 0.3s ease;
-    }
-
-    .nav-tab:hover {
-      background: #F1F5F9;
-      color: var(--text-main);
-    }
-
-    .nav-tab.active {
-      background: var(--primary-light);
-      color: var(--primary-dark);
-    }
-
-    .badge {
-      font-size: 11px;
-      padding: 2px 8px;
-      border-radius: 100px;
-      font-weight: 700;
-    }
-
-    .badge-red {
-      background: var(--red);
-      color: white;
-    }
-
-    /* improve mobile responsiveness */
+    .nav { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; box-shadow: var(--shadow-sm); }
+    .nav-inner { display: flex; gap: 8px; padding: 12px 24px; max-width: 1000px; margin: 0 auto; overflow-x: auto; scrollbar-width: none; }
+    .nav-tab { padding: 10px 16px; border-radius: 100px; border: none; background: transparent; font-size: 14px; font-weight: 600; color: var(--text-muted); cursor: pointer; transition: all 0.2s; white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; }
+        /* ========================= */
+/* DARK MODE */
+/* ========================= */
+.dark-mode {
+  background: #121212;
+  color: #ffffff;
+}
+/* Navbar */
+.dark-mode .nav {
+  background: #1e1e1e;
+  border-bottom: 1px solid #333;
+}
+/* Navigation Buttons */
+.dark-mode .nav-tab {
+  color: #e5e5e5;
+}
+.dark-mode .nav-tab:hover {
+  background: #2a2a2a;
+  color: white;
+}
+.dark-mode .nav-tab.active {
+  background: #333;
+  color: #fff;
+}
+/* Panels */
+.dark-mode section,
+.dark-mode .panel,
+.dark-mode .card {
+  background: #1e1e1e;
+  color: white;
+}
+/* Inputs */
+.dark-mode input,
+.dark-mode select,
+.dark-mode textarea {
+  background: #2a2a2a;
+  color: white;
+  border: 1px solid #555;
+}
+/* Tables */
+.dark-mode table {
+  background: #1e1e1e;
+  color: white;
+}
+.dark-mode th,
+.dark-mode td {
+  border-color: #444;
+}
+/* Modals */
+.dark-mode .modal,
+.dark-mode .modal-content {
+  background: #1e1e1e;
+  color: white;
+}
+/* Smooth transition */
+body,.nav,.nav-tab,.card,.panel,button,input,table,
+.modal {
+  transition: all 0.3s ease;
+}
+    .nav-tab:hover { background: #F1F5F9; color: var(--text-main); }
+    .nav-tab.active { background: var(--primary-light); color: var(--primary-dark); }
+    .badge { font-size: 11px; padding: 2px 8px; border-radius: 100px; font-weight: 700; }
+    .badge-red { background: var(--red); color: white; }
+     /* improve mobile responsiveness */
     @media (max-width: 768px) {
 
       .nav-inner {
@@ -1717,10 +1650,6 @@
 <body>
 
   <!-- Floating Language Widget -->
-  <div class="lang-widget">
-    <div style="font-size: 20px;">🌐</div>
-    <div id="google_translate_element"></div>
-  </div>
 
   <!-- HERO -->
   <header class="hero">
@@ -1728,8 +1657,7 @@
       <div>
         <div class="hero-eyebrow">Smart Triage & Referral OS</div>
         <h1 class="hero-title">स्वास्थ्य Queue<br><span>Swasthya Queue</span></h1>
-        <p class="hero-sub">AI-powered teleconsultation & emergency triage platform for rural primary health centres.
-          Instant assessment via Web, SMS or USSD.</p>
+        <p class="hero-sub">AI-powered teleconsultation & emergency triage platform for rural primary health centres. Instant assessment via Web, SMS or USSD.</p>
       </div>
 
     </div>
@@ -1788,6 +1716,7 @@
         <h2 style="font-size: 32px; font-weight: 800; letter-spacing: -0.5px;">Select Your Portal</h2>
         <p style="color: var(--text-muted); font-size: 16px;">Choose your operational mode to continue.</p>
       </div>
+      <div class="lang-selector"></div>
       <div class="portal-grid">
         <button class="portal-card" onclick="enterPortal('clinic')">
           <div class="portal-icon">🏥</div>
@@ -2659,87 +2588,22 @@
         gap: 7px
       }
 
-      /* TIMELINE */
-      .timeline {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        padding: 14px;
-        box-shadow: var(--shadow)
-      }
-
-      .tl-item {
-        display: flex;
-        gap: 12px;
-        align-items: flex-start;
-        padding-bottom: 10px
-      }
-
-      .tl-item:last-child {
-        padding-bottom: 0
-      }
-
-      .tl-left {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0
-      }
-
-      .tl-d {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        flex-shrink: 0;
-        margin-top: 3px
-      }
-
-      .tl-line {
-        width: 1.5px;
-        flex: 1;
-        min-height: 18px;
-        margin-top: 2px
-      }
-
-      .tl-done-d {
-        background: var(--green)
-      }
-
-      .tl-done-l {
-        background: var(--green)
-      }
-
-      .tl-active-d {
-        background: var(--orange);
-        animation: blink 1.5s infinite
-      }
-
-      .tl-active-l {
-        background: var(--border)
-      }
-
-      .tl-pend-d {
-        background: var(--border)
-      }
-
-      .tl-pend-l {
-        background: var(--border)
-      }
-
-      .tl-content {
-        flex: 1
-      }
-
-      .tl-label {
-        font-size: 13px;
-        font-weight: 500
-      }
-
-      .tl-time {
-        font-size: 11px;
-        color: var(--txt3);
-        margin-top: 1px
-      }
+/* TIMELINE */
+.timeline{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow)}
+.tl-item{display:flex;gap:12px;align-items:flex-start;padding-bottom:10px}
+.tl-item:last-child{padding-bottom:0}
+.tl-left{display:flex;flex-direction:column;align-items:center;gap:0}
+.tl-d{width:12px;height:12px;border-radius:50%;flex-shrink:0;margin-top:3px}
+.tl-line{width:1.5px;flex:1;min-height:18px;margin-top:2px}
+.tl-done-d{background:var(--green)}
+.tl-done-l{background:var(--green)}
+.tl-active-d{background:var(--orange);animation:blink 1.5s infinite}
+.tl-active-l{background:var(--border)}
+.tl-pend-d{background:var(--border)}
+.tl-pend-l{background:var(--border)}
+.tl-content{flex:1}
+.tl-label{font-size:13px;font-weight:500}
+.tl-time{font-size:11px;color:var(--txt3);margin-top:1px}
 
       /* HOW IT WORKS PANEL */
     </style>
@@ -2991,56 +2855,43 @@
             </div>
           </div>
 
-          <!-- Referral Message -->
-          <div class="ref-msg-box">
-            <div class="rmb-hd">
-              <div class="rmb-title">Auto-generated referral notice</div>
-              <span class="pill pill-purple" id="ref-status">Draft</span>
-            </div>
-            <div class="card-body">
-              <div class="msg-pre" id="ref-msg" contenteditable="false">REFERRAL NOTICE — PHC Barwani
-                Patient: Ramesh Kumar, 62M
-                Token: P-007 | Triage Score: 11/20 (RED)
-                Chief complaint: Chest pain + Breathlessness
-                Onset: Less than 1 hour ago
-                Vitals: BP 160/100, SpO2 91%, HR 112
-                Suspected: ACS / Cardiac event
-                Referring doctor: Dr. A. Sharma
-                ETA to hospital: ~9 min (AMB-108-BW04)
-                Requires: ICU bed, ECG, Cardiology review
-                PHC contact: +91-732-XXXXXX</div>
-              <div class="msg-meta">
-                <div class="msg-meta-item">
-                  <div class="mm-key">Sending to</div>
-                  <div class="mm-val" id="mm-to">District Hospital Barwani</div>
-                </div>
-                <div class="msg-meta-item">
-                  <div class="mm-key">Channel</div>
-                  <div class="mm-val">SMS + NIC eReferral</div>
-                </div>
-                <div class="msg-meta-item">
-                  <div class="mm-key">Ambulance</div>
-                  <div class="mm-val" id="mm-ambu">Not dispatched</div>
-                </div>
-                <div class="msg-meta-item">
-                  <div class="mm-key">Bed status</div>
-                  <div class="mm-val" id="mm-bed">Pending confirmation</div>
-                </div>
-              </div>
-              <div class="ref-btns">
-                <button class="btn btn-primary" style="flex:1" onclick="sendReferral()">Send referral + notify
-                  hospital</button>
-                <button class="btn btn-ghost btn-sm" onclick="editMsg()">✏️ Edit</button>
-              </div>
-            </div>
+      <!-- Referral Message -->
+      <div class="ref-msg-box">
+        <div class="rmb-hd">
+          <div class="rmb-title">Auto-generated referral notice</div>
+          <span class="pill pill-purple" id="ref-status">Draft</span>
+        </div>
+        <div class="card-body">
+          <div class="msg-pre" id="ref-msg" contenteditable="false">REFERRAL NOTICE — PHC Barwani
+Patient: Ramesh Kumar, 62M
+Token: P-007 | Triage Score: 11/20 (RED)
+Chief complaint: Chest pain + Breathlessness
+Onset: Less than 1 hour ago
+Vitals: BP 160/100, SpO2 91%, HR 112
+Suspected: ACS / Cardiac event
+Referring doctor: Dr. A. Sharma
+ETA to hospital: ~9 min (AMB-108-BW04)
+Requires: ICU bed, ECG, Cardiology review
+PHC contact: +91-732-XXXXXX</div>
+          <div class="msg-meta">
+            <div class="msg-meta-item"><div class="mm-key">Sending to</div><div class="mm-val" id="mm-to">District Hospital Barwani</div></div>
+            <div class="msg-meta-item"><div class="mm-key">Channel</div><div class="mm-val">SMS + NIC eReferral</div></div>
+            <div class="msg-meta-item"><div class="mm-key">Ambulance</div><div class="mm-val" id="mm-ambu">Not dispatched</div></div>
+            <div class="msg-meta-item"><div class="mm-key">Bed status</div><div class="mm-val" id="mm-bed">Pending confirmation</div></div>
+          </div>
+          <div class="ref-btns">
+            <button class="btn btn-primary" style="flex:1" onclick="sendReferral()">Send referral + notify hospital</button>
+            <button class="btn btn-ghost btn-sm" onclick="editMsg()">✏️ Edit</button>
           </div>
         </div>
       </div>
     </div>
-    <script>
-      /* ========================= */
-      /* DARK MODE TOGGLE */
-      /* ========================= */
+  </div>
+</div>
+<script>
+  /* ========================= */
+/* DARK MODE TOGGLE */
+/* ========================= */
 
       const darkModeBtn = document.getElementById("darkModeToggle");
 
@@ -3092,6 +2943,21 @@
       function triggerNotify() { sendReferral(); }
       function editMsg() { const m = document.getElementById('ref-msg'); m.contentEditable = 'true'; m.focus(); m.style.borderLeftColor = 'var(--purple)'; }
 
+
+      function changeLanguage(lang) {
+
+          const interval = setInterval(() => {
+
+            const combo = document.querySelector('.goog-te-combo');
+
+            if (combo) {
+            combo.value = lang;
+            combo.dispatchEvent(new Event('change'));
+            clearInterval(interval);
+              }
+
+          }, 500);
+}
 
     </script>
 
@@ -4097,18 +3963,17 @@
     document.addEventListener("DOMContentLoaded", init);
 
   </script>
-
+  
   <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
         pageLanguage: 'en',
         includedLanguages: 'en,hi,ta,te,kn',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      }, 'google_translate_element');
-    }
+        autoDisplay: false
+    }, 'google_translate_element');
+}
   </script>
-  <script type="text/javascript"
-    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>
